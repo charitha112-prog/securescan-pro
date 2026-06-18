@@ -101,6 +101,14 @@ function updateUI(data){
     applyTheme(
         data.riskLevel
     );
+    if(
+    data.riskLevel ===
+    "High Risk"
+){
+
+    playHighRiskBeep();
+
+}
 
     let risksHTML = "";
 
