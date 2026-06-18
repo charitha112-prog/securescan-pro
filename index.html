@@ -1,311 +1,445 @@
-```html
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
 
-    <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
 
-    <title>SecureScan Pro</title>
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+<title>SecureScan Pro</title>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 
-    <script
-        src="https://kit.fontawesome.com/6c4f4c9c57.js"
-        crossorigin="anonymous">
-    </script>
+<link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+<script
+    src="https://kit.fontawesome.com/6c4f4c9c57.js"
+    crossorigin="anonymous">
+</script>
+```
 
 </head>
 
 <body>
 
-    <div class="background-glow"></div>
+```
+<div class="background-glow"></div>
 
-    <!-- NAVBAR -->
+<nav class="navbar">
 
-    <nav class="navbar">
+    <div class="logo">
 
-        <div class="logo">
+        <i class="fas fa-shield-alt"></i>
 
-            <i class="fas fa-shield-alt"></i>
+        SecureScan Pro
 
-            SecureScan Pro
+    </div>
 
-        </div>
+    <ul class="nav-links">
 
-        <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
 
-            <li><a href="#">Home</a></li>
+        <li><a href="#scanner">Scanner</a></li>
 
-            <li><a href="#">Scanner</a></li>
+        <li><a href="#reports">Reports</a></li>
 
-            <li><a href="#">Reports</a></li>
+        <li><a href="#about">About</a></li>
 
-            <li><a href="#">About</a></li>
+    </ul>
 
-        </ul>
+</nav>
 
-    </nav>
+<section id="home" class="hero">
 
-    <!-- HERO -->
+    <h1>
 
-    <section class="hero">
+        Website Security Scanner
 
-        <h1>
+    </h1>
 
-            Website Security Scanner
+    <p>
 
-        </h1>
+        Analyze website security,
+        detect vulnerabilities,
+        generate safety scores,
+        and discover safer alternatives.
 
-        <p>
+    </p>
 
-            Analyze website security,
-            detect vulnerabilities,
-            generate safety scores,
-            and discover safer alternatives.
+    <div class="scan-box">
 
-        </p>
+        <input
+            type="text"
+            id="websiteInput"
+            placeholder="Enter Website URL">
 
-        <div class="scan-box">
+        <button
+            onclick="scanWebsite()">
 
-            <input
-                type="text"
-                id="websiteInput"
-                placeholder="Enter Website URL">
+            Scan Website
 
-            <button
-                onclick="scanWebsite()">
+        </button>
 
-                Scan Website
+    </div>
 
-            </button>
+</section>
 
-        </div>
+<section id="scanner" class="results-container">
 
-    </section>
-
-    <!-- RESULTS -->
-
-    <section class="results-container">
-
-        <div class="score-card">
-
-            <h2>
-
-                Security Score
-
-            </h2>
-
-            <div
-                class="score-circle"
-                id="scoreCircle">
-
-                <span
-                    id="scoreValue">
-
-                    0
-
-                </span>
-
-            </div>
-
-            <h3
-                id="riskLevel">
-
-                Waiting For Scan
-
-            </h3>
-
-        </div>
-
-        <div class="vulnerability-card">
-
-            <h2>
-
-                Detected Risks
-
-            </h2>
-
-            <ul
-                id="riskList">
-
-                <li>
-
-                    No scan performed yet.
-
-                </li>
-
-            </ul>
-
-        </div>
-
-        <div class="recommendation-card">
-
-            <h2>
-
-                Recommendations
-
-            </h2>
-
-            <ul
-                id="recommendationList">
-
-                <li>
-
-                    Recommendations
-                    will appear here.
-
-                </li>
-
-            </ul>
-
-        </div>
-
-    </section>
-
-    <!-- ALTERNATIVES -->
-
-    <section class="alternative-section">
+    <div class="score-card">
 
         <h2>
 
-            Safer Alternatives
+            Security Score
 
         </h2>
 
         <div
-            class="alternative-grid"
-            id="alternativeGrid">
+            class="score-circle"
+            id="scoreCircle">
 
-            <div class="alt-card">
+            <span
+                id="scoreValue">
 
-                Scan a website
-                to receive
+                0
+
+            </span>
+
+        </div>
+
+        <h3
+            id="riskLevel">
+
+            Waiting For Scan
+
+        </h3>
+
+    </div>
+
+    <div class="vulnerability-card">
+
+        <h2>
+
+            Detected Risks
+
+        </h2>
+
+        <ul
+            id="riskList">
+
+            <li>
+
+                No scan performed yet.
+
+            </li>
+
+        </ul>
+
+    </div>
+
+    <div class="recommendation-card">
+
+        <h2>
+
+            Recommendations
+
+        </h2>
+
+        <ul
+            id="recommendationList">
+
+            <li>
+
+                Recommendations
+                will appear here.
+
+            </li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+<section id="reports" class="alternative-section">
+
+    <h2>
+
+        Safer Alternatives
+
+    </h2>
+
+    <div
+        class="alternative-grid"
+        id="alternativeGrid">
+
+        <div class="alt-card">
+
+            Scan a website
+            to receive
+            safer alternatives.
+
+        </div>
+
+    </div>
+
+</section>
+<!-- CYBERSECURITY AWARENESS -->
+
+<section class="alternative-section">
+
+
+<h2>
+
+    Cybersecurity Awareness
+
+</h2>
+
+<div class="alternative-grid">
+
+    <div class="alt-card">
+
+        <h3>Phishing Awareness</h3>
+
+        <p>
+            Learn how phishing attacks work and how to avoid them.
+        </p>
+
+        <a href="https://www.cisa.gov/topics/cybersecurity-best-practices"
+           target="_blank">
+
+           Learn More →
+
+        </a>
+
+    </div>
+
+    <div class="alt-card">
+
+        <h3>Password Security</h3>
+
+        <p>
+            Learn how to create strong and secure passwords.
+        </p>
+
+        <a href="https://staysafeonline.org"
+           target="_blank">
+
+           Learn More →
+
+        </a>
+
+    </div>
+
+    <div class="alt-card">
+
+        <h3>OWASP Security</h3>
+
+        <p>
+            Explore web security best practices.
+        </p>
+
+        <a href="https://owasp.org"
+           target="_blank">
+
+           Learn More →
+
+        </a>
+
+    </div>
+
+</div>
+
+
+</section>
+
+<!-- SCAN HISTORY -->
+
+<section class="alternative-section">
+
+
+<h2>
+
+    Recent Scans
+
+</h2>
+
+<div
+    class="alt-card"
+    id="historyBox">
+
+    No scans yet.
+
+</div>
+
+
+</section>
+
+<!-- FEEDBACK -->
+
+<section class="alternative-section">
+
+
+<h2>
+
+    User Feedback
+
+</h2>
+
+<div class="alt-card">
+
+    <input
+        type="text"
+        id="feedbackName"
+        placeholder="Your Name">
+
+    <br><br>
+
+    <textarea
+        id="feedbackText"
+        placeholder="Share your feedback..."
+        rows="5"
+        style="width:100%;"></textarea>
+
+    <br><br>
+
+    <button
+        onclick="submitFeedback()">
+
+        Submit Feedback
+
+    </button>
+
+</div>
+
+
+</section>
+
+
+<footer id="about" class="footer">
+
+    <div class="footer-grid">
+
+        <div>
+
+            <h2>
+
+                SecureScan Pro
+
+            </h2>
+
+            <p>
+
+                Intelligent website
+                security analysis platform
+                designed to evaluate
+                risks and recommend
                 safer alternatives.
 
-            </div>
+            </p>
 
         </div>
 
-    </section>
+        <div>
 
-    <!-- FOOTER -->
+            <h3>
 
-    <footer class="footer">
+                Quick Links
 
-        <div class="footer-grid">
+            </h3>
 
-            <div>
+            <ul>
 
-                <h2>
+                <li><a href="#home">Home</a></li>
 
-                    SecureScan Pro
+                <li><a href="#scanner">Scanner</a></li>
 
-                </h2>
+                <li><a href="#reports">Reports</a></li>
 
-                <p>
+                <li><a href="#about">About</a></li>
 
-                    Intelligent website
-                    security analysis platform
-                    designed to evaluate
-                    risks and recommend
-                    safer alternatives.
-
-                </p>
-
-            </div>
-
-            <div>
-
-                <h3>
-
-                    Quick Links
-
-                </h3>
-
-                <ul>
-
-                    <li>Home</li>
-
-                    <li>Scanner</li>
-
-                    <li>Reports</li>
-
-                    <li>About</li>
-
-                </ul>
-
-            </div>
-
-            <div>
-
-                <h3>
-
-                    Features
-
-                </h3>
-
-                <ul>
-
-                    <li>HTTPS Analysis</li>
-
-                    <li>Security Headers</li>
-
-                    <li>Risk Detection</li>
-
-                    <li>Safety Score</li>
-
-                    <li>Alternative Suggestions</li>
-
-                </ul>
-
-            </div>
-
-            <div>
-
-                <h3>
-
-                    Technologies
-
-                </h3>
-
-                <ul>
-
-                    <li>HTML5</li>
-
-                    <li>CSS3</li>
-
-                    <li>JavaScript</li>
-
-                    <li>Node.js</li>
-
-                    <li>Express.js</li>
-
-                </ul>
-
-            </div>
+            </ul>
 
         </div>
 
-        <div class="footer-bottom">
+        <div>
 
-            © 2026 SecureScan Pro
+            <h3>
+
+                Features
+
+            </h3>
+
+            <ul>
+
+                <li onclick="showFeature('https')" style="cursor:pointer;">
+                    HTTPS Analysis
+                </li>
+
+                <li onclick="showFeature('headers')" style="cursor:pointer;">
+                    Security Headers
+                </li>
+
+                <li onclick="showFeature('risk')" style="cursor:pointer;">
+                    Risk Detection
+                </li>
+
+                <li onclick="showFeature('score')" style="cursor:pointer;">
+                    Safety Score
+                </li>
+
+                <li onclick="showFeature('alternatives')" style="cursor:pointer;">
+                    Alternative Suggestions
+                </li>
+
+            </ul>
 
         </div>
 
-    </footer>
+        <div>
 
-    <script src="script.js"></script>
+            <h3>
+
+                Technologies
+
+            </h3>
+
+            <ul>
+
+                <li>HTML5</li>
+
+                <li>CSS3</li>
+
+                <li>JavaScript</li>
+
+                <li>Node.js</li>
+
+                <li>Express.js</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        © 2026 SecureScan Pro
+
+    </div>
+
+</footer>
+
+<script src="script.js"></script>
+
 
 </body>
 
 </html>
-```
