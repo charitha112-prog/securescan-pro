@@ -376,56 +376,200 @@ body{
 
 }
 
-.footer p,
+.footer a{
+
+    color:#60a5fa !important;
+
+    text-decoration:underline;
+
+    cursor:pointer;
+
+    font-weight:500;
+
+    transition:0.3s;
+
+}
+
+.footer a:hover{
+
+    color:#93c5fd !important;
+
+    text-decoration:underline;
+
+}
+
 .footer li{
 
-    color:#a9a9b5;
-
-    line-height:1.9;
+    cursor:pointer;
 
 }
 
-.footer ul{
+.footer li:hover{
 
-    list-style:none;
-
-}
-
-.footer-bottom{
-
-    margin-top:40px;
-
-    padding-top:20px;
-
-    border-top:
-    1px solid rgba(255,255,255,0.08);
-
-    text-align:center;
-
-    color:#8a8a95;
+    color:#60a5fa;
 
 }
 
-@media(max-width:768px){
+.footer li[onclick]{
 
-    .nav-links{
+    color:#60a5fa;
 
-        display:none;
+    text-decoration:underline;
 
-    }
-
-    .hero h1{
-
-        font-size:2.3rem;
-
-    }
-
-    .score-circle{
-
-        width:160px;
-        height:160px;
-
-    }
+    cursor:pointer;
 
 }
 
+.footer li[onclick]:hover{
+
+    color:#93c5fd;
+
+}
+/* ========================= */
+/* CYBERSECURITY AWARENESS   */
+/* ========================= */
+
+.alternative-section a{
+
+
+color:#60a5fa;
+
+text-decoration:underline;
+
+font-weight:500;
+
+transition:0.3s;
+
+
+}
+
+.alternative-section a:hover{
+
+
+color:#93c5fd;
+
+
+}
+
+/* ========================= */
+/* FEEDBACK FORM             */
+/* ========================= */
+
+#feedbackName,
+#feedbackText{
+
+
+width:100%;
+
+padding:14px;
+
+border:none;
+
+border-radius:12px;
+
+background:#1c1c2b;
+
+color:white;
+
+outline:none;
+
+
+}
+
+#feedbackText{
+
+
+resize:vertical;
+
+
+}
+
+.alt-card button{
+
+
+border:none;
+
+cursor:pointer;
+
+padding:12px 24px;
+
+border-radius:12px;
+
+background:var(--theme);
+
+color:white;
+
+font-weight:600;
+
+transition:0.3s;
+
+
+}
+
+.alt-card button:hover{
+
+
+transform:translateY(-2px);
+
+
+}
+
+/* ========================= */
+/* SCAN HISTORY              */
+/* ========================= */
+
+#historyBox{
+
+
+min-height:80px;
+
+line-height:2;
+
+
+}
+
+/* ========================= */
+/* FOOTER LINKS              */
+/* ========================= */
+
+.footer a{
+
+
+color:#60a5fa !important;
+
+text-decoration:underline;
+
+cursor:pointer;
+
+font-weight:500;
+
+
+}
+
+.footer a:hover{
+
+
+color:#93c5fd !important;
+
+
+}
+
+.footer li[onclick]{
+
+
+color:#60a5fa;
+
+text-decoration:underline;
+
+cursor:pointer;
+
+
+}
+
+.footer li[onclick]:hover{
+
+
+color:#93c5fd;
+
+
+}
