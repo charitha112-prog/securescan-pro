@@ -111,7 +111,7 @@ async function scanWebsite(url) {
             ]
         ) {
 
-            score -= 15;
+            score -= 10;
 
             risks.push(
                 "Missing HSTS header."
@@ -127,7 +127,7 @@ async function scanWebsite(url) {
             ]
         ) {
 
-            score -= 15;
+            score -= 10;
 
             risks.push(
                 "Missing Content Security Policy."
