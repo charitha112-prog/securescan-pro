@@ -57,16 +57,21 @@ async function scanWebsite() {
             }
         );
 
-        const data =
-        await response.json();
+       const data =
+await response.json();
 
-        updateUI(data);
+saveScanHistory(url);
 
+updateUI(data);
     }
 
     catch(error){
 
         console.error(error);
+
+        alert(
+            "Connection Error. Make sure server.js is running."
+        );
 
         document.getElementById(
             "scoreValue"
@@ -244,4 +249,207 @@ window.onload = () => {
         "scoreValue"
     ).textContent = "0";
 
+    displayScanHistory();
+
 };
+
+function showFeature(type){
+
+
+if(type === "https"){
+
+    alert(
+        "HTTPS Analysis checks whether a website uses secure encrypted HTTPS connections to protect user data from interception."
+    );
+
+}
+
+else if(type === "headers"){
+
+    alert(
+        "Security Headers protect websites against attacks such as clickjacking, XSS and MIME-type sniffing."
+    );
+
+}
+
+else if(type === "risk"){
+
+    alert(
+        "Risk Detection identifies missing security protections and potential vulnerabilities."
+    );
+
+}
+
+else if(type === "score"){
+
+    alert(
+        "Safety Score is calculated based on HTTPS usage, security headers and overall website security posture."
+    );
+
+}
+
+else if(type === "alternatives"){
+
+    alert(
+        "Alternative Suggestions recommend safer websites offering similar services."
+    );
+
+}
+
+
+}
+
+function playHighRiskBeep(){
+
+    const audioContext =
+    new (
+        window.AudioContext ||
+        window.webkitAudioContext
+    )();
+
+    const oscillator =
+    audioContext.createOscillator();
+
+    const gainNode =
+    audioContext.createGain();
+
+    oscillator.connect(
+        gainNode
+    );
+
+    gainNode.connect(
+        audioContext.destination
+    );
+
+    oscillator.type =
+    "sawtooth";
+
+    oscillator.frequency.value =
+    700;
+
+    gainNode.gain.value =
+    0.2;
+
+    oscillator.start();
+
+    setTimeout(() => {
+
+        oscillator.stop();
+
+    }, 500);
+
+}
+function submitFeedback(){
+
+
+const name =
+document.getElementById(
+    "feedbackName"
+).value;
+
+const feedback =
+document.getElementById(
+    "feedbackText"
+).value;
+
+if(
+    !name ||
+    !feedback
+){
+
+    alert(
+        "Please fill all fields."
+    );
+
+    return;
+}
+
+alert(
+    "Thank you for your feedback, " +
+    name +
+    "!"
+);
+
+document.getElementById(
+    "feedbackName"
+).value = "";
+
+document.getElementById(
+    "feedbackText"
+).value = "";
+
+
+}
+
+function saveScanHistory(url){
+
+
+let history =
+
+JSON.parse(
+    localStorage.getItem(
+        "scanHistory"
+    )
+) || [];
+
+history.unshift(url);
+
+history =
+[...new Set(history)];
+
+history =
+history.slice(0,5);
+
+localStorage.setItem(
+    "scanHistory",
+    JSON.stringify(history)
+);
+
+displayScanHistory();
+
+
+}
+
+function displayScanHistory(){
+
+
+const historyBox =
+document.getElementById(
+    "historyBox"
+);
+
+if(!historyBox){
+
+    return;
+
+}
+
+const history =
+
+JSON.parse(
+    localStorage.getItem(
+        "scanHistory"
+    )
+) || [];
+
+if(
+    history.length === 0
+){
+
+    historyBox.innerHTML =
+    "No scans yet.";
+
+    return;
+
+}
+
+historyBox.innerHTML =
+
+history.map(url => `<div>${url}</div>`
+
+)
+.join("");
+
+
+}
+
