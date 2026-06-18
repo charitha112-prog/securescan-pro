@@ -1,4 +1,3 @@
-
 async function scanWebsite() {
 
     const url =
@@ -43,17 +42,17 @@ async function scanWebsite() {
 
         const response =
         await fetch(
-            "http://localhost:3000/scan",
+            "/scan",
             {
-                method:"POST",
+                method: "POST",
 
-                headers:{
+                headers: {
                     "Content-Type":
                     "application/json"
                 },
 
-                body:JSON.stringify({
-                    url:url
+                body: JSON.stringify({
+                    url: url
                 })
             }
         );
@@ -100,7 +99,7 @@ function updateUI(data){
 
     let risksHTML = "";
 
-    data.risks.forEach(risk=>{
+    data.risks.forEach(risk => {
 
         risksHTML +=
         `<li>${risk}</li>`;
@@ -114,7 +113,7 @@ function updateUI(data){
 
     let recommendationHTML = "";
 
-    data.recommendations.forEach(rec=>{
+    data.recommendations.forEach(rec => {
 
         recommendationHTML +=
         `<li>${rec}</li>`;
@@ -128,20 +127,14 @@ function updateUI(data){
 
     let alternativesHTML = "";
 
-    data.alternatives.forEach(site=>{
+    data.alternatives.forEach(site => {
 
-        alternativesHTML +=
-
-        `
+        alternativesHTML += `
         <div class="alt-card">
 
-            <h3>
-                ${site.name}
-            </h3>
+            <h3>${site.name}</h3>
 
-            <p>
-                ${site.description}
-            </p>
+            <p>${site.description}</p>
 
             <br>
 
@@ -175,7 +168,7 @@ function animateScore(target){
     );
 
     const timer =
-    setInterval(()=>{
+    setInterval(() => {
 
         current++;
 
@@ -188,7 +181,7 @@ function animateScore(target){
 
         }
 
-    },15);
+    }, 15);
 
 }
 
@@ -245,7 +238,7 @@ function applyTheme(riskLevel){
 
 }
 
-window.onload = ()=>{
+window.onload = () => {
 
     document.getElementById(
         "scoreValue"
